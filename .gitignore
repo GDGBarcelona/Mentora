@@ -24,7 +24,11 @@ proguard/
 
 # Android Studio
 .DS_Store
-.idea/
+.idea/*.xml
+.idea/.name
+.idea/copyright/
+.idea/libraries/
+.idea/scopes/
 .gradle
 /*/local.properties
 /*/out
