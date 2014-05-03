@@ -1,1 +1,1 @@
-include ':mentora'
+include ':mentora', ':core'
