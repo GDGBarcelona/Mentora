@@ -20,4 +20,20 @@ public class ExampleClassTest {
         assertNotNull(exampleClass);
         //assertFalse(true);
     }
+
+    @Test
+    public void hashForEmptyStringShouldBeAnEmptyString() throws ExampleClass.makeHashNullString {
+        assertEquals("",exampleClass.makeHash(""));
+    }
+
+    @Test
+    public void hashForAShouldBeASDF() throws ExampleClass.makeHashNullString {
+        assertEquals("ASDF",exampleClass.makeHash("a"));
+    }
+
+    @Test(expected = ExampleClass.makeHashNullString.class)
+    public void hashForNullShouldThrowAnException() throws ExampleClass.makeHashNullString {
+        exampleClass.makeHash(null);
+    }
+
 }
