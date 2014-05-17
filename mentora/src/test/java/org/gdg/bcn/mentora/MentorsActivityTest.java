@@ -2,6 +2,7 @@ package org.gdg.bcn.mentora;
 
 
 import android.app.Activity;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.junit.Test;
@@ -17,8 +18,8 @@ public class MentorsActivityTest {
     @Test
     public void helloWorldTextViewShouldExist(){
         Activity activity = Robolectric.buildActivity(MentorsActivity.class).create().get();
-        TextView helloworld = (TextView) activity.findViewById(R.id.texthello);
-        assertNotNull(helloworld);
+        ListView mentorsListView = (ListView) activity.findViewById(R.id.listview);
+        assertNotNull(mentorsListView);
     }
 
 }
