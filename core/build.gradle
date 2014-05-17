@@ -5,4 +5,13 @@ repositories {
 }
 dependencies {
     testCompile 'junit:junit:4.11'
+    testCompile 'org.mockito:mockito-all:+'
+}
+
+test {
+    testLogging {
+        showStandardStreams = true
+        showStackTraces = true
+        exceptionFormat = "full"
+    }
 }
