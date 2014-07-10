@@ -6,11 +6,16 @@ class MentorsPresenter {
     private MentorsUIAdapter uiAdapter;
     private MentorsModelAdapter modelAdapter;
 
-    static MentorsPresenter newInstance(MentorsUIAdapter uiAdapter, MentorsModelAdapter modelAdapter) {
+    static MentorsPresenter newInstance(MentorsUIAdapter uiAdapter,
+                                        MentorsModelAdapter modelAdapter) {
         MentorsPresenter presenter = new MentorsPresenter(uiAdapter, modelAdapter);
-        uiAdapter.setPresenter(presenter);
-        modelAdapter.setPresenter(presenter);
+        presenter.initialize();
         return presenter;
+    }
+
+    private void initialize() {
+        uiAdapter.setPresenter(this);
+        modelAdapter.setPresenter(this);
     }
 
     private MentorsPresenter(MentorsUIAdapter uiAdapter, MentorsModelAdapter modelAdapter) {

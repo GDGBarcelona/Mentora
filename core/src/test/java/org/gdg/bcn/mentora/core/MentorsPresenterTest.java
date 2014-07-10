@@ -36,7 +36,8 @@ public class MentorsPresenterTest {
         verify(mockModelAdapter).startLoadingData(LATITUDE_0, LONGITUDE_0);
     }
 
-    @Test
+
+    @Test @SuppressWarnings("unchecked")
     public void shouldNotifyDataLoaded() {
         List<Mentor> mentorsList = mock(List.class);
         presenter.notifyDataLoaded(mentorsList);
