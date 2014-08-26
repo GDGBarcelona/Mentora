@@ -14,7 +14,6 @@ class MentorsPresenter {
     }
 
     private void initialize() {
-        uiAdapter.setPresenter(this);
         modelAdapter.setPresenter(this);
     }
 

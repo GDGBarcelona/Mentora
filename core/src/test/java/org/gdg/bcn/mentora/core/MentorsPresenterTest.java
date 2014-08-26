@@ -26,7 +26,6 @@ public class MentorsPresenterTest {
 
     @Test
     public void shouldSetPresenter() {
-        verify(mockUIAdapter).setPresenter(presenter);
         verify(mockModelAdapter).setPresenter(presenter);
     }
 

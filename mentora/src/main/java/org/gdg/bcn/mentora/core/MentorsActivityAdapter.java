@@ -4,30 +4,20 @@ import android.widget.ArrayAdapter;
 
 import org.gdg.bcn.mentora.MentorsActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
+import dagger.ObjectGraph;
+
 public class MentorsActivityAdapter implements MentorsUIAdapter {
-    private MentorsPresenter presenter;
+    @Inject MentorsPresenter presenter;
     private MentorsActivity activity;
 
-    public static MentorsActivityAdapter newInstance(MentorsModelAdapter modelAdapter) {
-        MentorsActivityAdapter uiAdapter = new MentorsActivityAdapter();
-        MentorsPresenter.newInstance(uiAdapter, modelAdapter);
-        return uiAdapter;
-    }
-
-    private MentorsActivityAdapter() {}
-
-    @Override
-    public void setPresenter(MentorsPresenter presenter) {
-        this.presenter = presenter;
-    }
-
-    public void setActivity(MentorsActivity activity) {
+    public MentorsActivityAdapter(MentorsActivity activity) {
         this.activity = activity;
+        ObjectGraph graph = ObjectGraph.create(new MentorsMVPModule(this));
+        graph.inject(this);
     }
 
     @Override
